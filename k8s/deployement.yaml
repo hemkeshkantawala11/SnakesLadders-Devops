@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snakeladder-cli
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: snakeladder
+  template:
+    metadata:
+      labels:
+        app: snakeladder
+    spec:
+      containers:
+        - name: snakeladder
+          image: hemkesh11/snakeladder:latest
+          stdin: true
+          tty: true

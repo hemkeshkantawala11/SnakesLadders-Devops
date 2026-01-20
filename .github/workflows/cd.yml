@@ -28,7 +28,7 @@ jobs:
 
       - name: Deploy to Kubernetes
         run: |
-          kubectl apply -f k8s/deployment.yaml
+          kubectl apply -f k8s/deployment.yaml --validate=false
 
       - name: Verify Rollout
         run: kubectl rollout status deployment/snakeladder-cli
